@@ -1,0 +1,29 @@
+research_task:
+  description: >
+    Retrieve some job postings for this {role} in this {area} using the custom tool provided.
+  expected_output: >
+    A undedited raw JSON of the job postings extracted from the custom tool
+
+extract_task:
+  description: >
+    Extract all the necessary and relevant data from the raw json job postings list. 
+    Most of the important data can be found under the "Description" header.
+    All the data MUST be from what the job_scout agent provides.
+  expected_output: >
+    A JSON formatted catagoriesed list of what each job posting wants out of employees such as 'skills', 
+    'softskills', 'experience', 'education' and any other relevant ones you find useful. These should be paired with what 
+    job, company, specific location, salary, and redirect url it is for the associated job posting.
+
+reporting_task:
+  description: >
+    Review the context you got for {role} at {area} and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information including action steps 
+    the user could make to improve their chances of getting an interview in this field.
+    All your results and analyses should have evidence for the claim so include citations.
+    The citations should say which job posting led to that conclusion in the report.
+  expected_output: >
+    A fully fledge report with the mains topics, each with a full section of information.
+    Formated as markdown with out code blocks. Make sure to include what role and area this is for.
+    Make sure the output file is structured very well and easy to read/digest the content with snippets of citations.
+    The citations should include the company name and redirect url.
+    The output file is report.md
